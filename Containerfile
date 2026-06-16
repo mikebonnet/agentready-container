@@ -8,7 +8,7 @@ ENV VIRTUAL_ENV="/opt/venv" \
 
 RUN dnf -y --setopt=install_weak_deps=false install python3 uv git-core golang
 RUN uv venv $VIRTUAL_ENV
-RUN uv pip install agentready
+RUN uv pip install https://github.com/ambient-code/agentready.git
 RUN go install github.com/fzipp/gocyclo/cmd/gocyclo@latest
 
 ENTRYPOINT ["agentready"]
